@@ -1,0 +1,30 @@
+<!-- Intro to raw React APIs -->
+<!-- http://localhost:3000/isolated/exercise/02.html -->
+
+<body>
+  <div id="root"></div>
+  <!-- 🐨 add React and ReactDOM on the page.-->
+  <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+  <script type="module">
+
+    const rootElement = document.getElementById('root')
+    const helloReactElement = React.createElement('span' , {children : 'Hello'} ) 
+    const worldReactElement = React.createElement('span' , {children : 'World!'} ) 
+    const reactElement = React.createElement('div' , {
+      className :'container' ,
+      children : [helloReactElement , ' ' , worldReactElement]
+    } )
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(reactElement)
+
+
+    /*
+    const element = document.createElement('div')
+    element.textContent = 'Hello World' // 💰 in React, you set this with the "children" prop
+    element.className = 'container' // 💰 in React, this is also called the "className" prop
+    => This is similar to ReactDOM.createRoot().render()
+    rootElement.append(element)
+    */
+  </script>
+</body>
